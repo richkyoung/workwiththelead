@@ -65,7 +65,7 @@
     .hero-tagline { font-size: 20px; color: rgba(255, 255, 255, 0.9); font-weight: 500; max-width: 12ch; letter-spacing: 0.02em; }
     .hero-right { text-align: right; }
     .arrow-line { width: 100%; height: 3px; background: var(--electric-orange); margin-bottom: 24px; position: relative; }
-    .arrow-line:after { content: ""; position: absolute; right: 0; top: -5px; width: 0; height: 0; border-left: 16px solid var(--electric-orange); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+    .arrow-line:after { content: ""; position: absolute; right: 0; top: -6.5px; width: 0; height: 0; border-left: 16px solid var(--electric-orange); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
     .coming-soon { font-size: 42px; font-weight: 800; color: var(--electric-orange); margin-top: 16px; letter-spacing: -0.01em; }
     @media (max-width: 720px) { .hero h1 { font-size: 48px; } .hero-tagline { font-size: 16px; } .hero-right { text-align: left; } .coming-soon { font-size: 28px; } }
 
@@ -91,11 +91,63 @@
 
     @media (max-width: 720px) { .narrative { padding: 80px 0; } }
 
-    /* CTA Section */
-    .cta-section { background: var(--slate-blue-gray); color: var(--white); padding: 80px 0; text-align: center; }
-    .cta-section h2 { color: var(--white); margin-bottom: 20px; font-size: 48px; }
-    .cta-statement { color: rgba(255, 255, 255, 0.9); font-size: 18px; margin-bottom: 50px; font-weight: 500; }
-    .meetings-iframe-container { max-width: 600px; margin: 0 auto; }
+    /* Booking Section */
+    .booking-section {
+      background: var(--slate-blue-gray);
+      color: var(--white);
+      padding: 100px 24px 80px;
+    }
+    .booking-intro {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .booking-intro h2 {
+      color: var(--white);
+      margin: 0 0 24px;
+      font-size: 48px;
+    }
+    .booking-intro p {
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+    }
+    .booking-button {
+      border: none;
+      padding: 16px 28px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+      background: var(--electric-orange);
+      color: white;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+      font-size: 16px;
+    }
+    .booking-button:hover {
+      transform: translateY(-2px);
+    }
+    .coming-soon-note {
+      margin-top: 28px;
+      opacity: 0.75;
+      font-weight: 400;
+    }
+    .booking-calendar {
+      max-width: 900px;
+      margin: 0 auto;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.6s ease, opacity 0.4s ease, margin-top 0.6s ease;
+    }
+    .booking-calendar.is-open {
+      max-height: 1200px;
+      opacity: 1;
+      margin-top: 60px;
+    }
+    .meetings-iframe-container {
+      width: 100%;
+    }
 
     /* Footer */
     footer { background: var(--black); color: var(--white); padding: 60px 0; text-align: center; }
@@ -178,16 +230,40 @@
 
 <div class="banner"></div>
 
-<section class="cta-section" id="early-access">
+<section class="booking-section" id="book">
   <div class="wrap">
-    <h2>Let's talk about deploying me tomorrow.</h2>
-    <div class="cta-statement">Full site coming soon.</div>
-    
-    <!-- HubSpot Meetings Embed -->
-    <div class="meetings-iframe-container" data-src="https://meetings-na2.hubspot.com/thelead/rich?embed=true"></div>
-    <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+    <div class="booking-intro">
+      <h2>Let's talk about deploying me tomorrow.</h2>
+      <p>Pick a time that works.</p>
+      <button class="booking-button" id="bookingToggle">
+        Find a time →
+      </button>
+      <p class="coming-soon-note">Full site coming soon.</p>
+    </div>
+    <div class="booking-calendar" id="bookingCalendar">
+      <div class="meetings-iframe-container" data-src="https://meetings-na2.hubspot.com/thelead/rich?embed=true"></div>
+    </div>
   </div>
 </section>
+
+<script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+
+<script>
+  const bookingButton = document.getElementById('bookingToggle');
+  const bookingCalendar = document.getElementById('bookingCalendar');
+  bookingButton.addEventListener('click', function () {
+    bookingCalendar.classList.toggle('is-open');
+    if (bookingCalendar.classList.contains('is-open')) {
+      bookingButton.textContent = 'Close calendar ↑';
+      bookingCalendar.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      bookingButton.textContent = 'Find a time →';
+    }
+  });
+</script>
 
 <footer>
   <div class="wrap">
