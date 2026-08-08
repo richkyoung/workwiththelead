@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="icon" href="lead-avatar-400x400.png" type="image/png">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The LEAD — Marketing Strategy & Execution</title>
-  <meta name="description" content="We clear the line with strategy and fundamentals. You score the points. Marketing function build, revenue protection, critical play execution, and team coaching for CMOs, VPs of Sales, and growing companies." />
+  <meta name="description" content="Direction plus execution. Coming soon." />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L15JY2SKZZ"></script>
@@ -15,6 +14,8 @@
     gtag('js', new Date());
     gtag('config', 'G-L15JY2SKZZ');
   </script>
+
+  <link rel="icon" href="lead-avatar-400x400.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,165 +50,120 @@
 
     /* Typography */
     h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
-    h1 { font-size: 72px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    h1 { font-size: 92px; font-weight: 800; line-height: 1; margin-bottom: 0; }
     h2 { font-size: 64px; font-weight: 400; line-height: 1.1; margin-bottom: 20px; }
     h3 { font-size: 40px; font-weight: 600; line-height: 1.15; margin-bottom: 16px; }
-    h4 { font-size: 24px; font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
-    h5 { font-size: 20px; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
-    h6 { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.4; margin-bottom: 8px; }
-
     p { font-size: 16px; line-height: 1.6; margin-bottom: 16px; }
-    .lede { font-size: 20px; color: var(--text-muted); line-height: 1.5; max-width: 52ch; }
-
-    /* Header / Nav */
-    header { background: var(--white); border-bottom: 1px solid var(--calm-gray); position: sticky; top: 0; z-index: 50; }
-    .header-row { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-    .logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 24px; color: var(--text-dark); text-decoration: none; }
-    .logo-accent { color: var(--electric-orange); }
-    nav a { font-size: 14px; font-weight: 600; color: var(--text-dark); text-decoration: none; margin-right: 32px; transition: color 0.2s; }
-    nav a:hover { color: var(--electric-orange); }
-    @media (max-width: 860px) { nav { display: none; } }
 
     /* Hero */
-    .hero { background: var(--slate-blue-gray); color: var(--white); padding: 120px 0 100px; text-align: center; }
-    .hero h1 { color: var(--white); max-width: 14ch; margin: 0 auto 24px; }
-    .hero .lede { color: rgba(255, 255, 255, 0.9); margin: 0 auto 40px; }
-    .cta-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 4px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s; border: 2px solid transparent; }
-    .btn-primary { background: var(--electric-orange); color: var(--white); }
-    .btn-primary:hover { background: #E55A00; transform: translateY(-2px); }
-    .btn-secondary { background: var(--white); color: var(--slate-blue-gray); }
-    .btn-secondary:hover { background: var(--calm-gray); transform: translateY(-2px); }
-    @media (max-width: 720px) { .hero { padding: 80px 0 60px; } .hero h1 { font-size: 48px; } }
+    .hero { background: var(--slate-blue-gray); color: var(--white); padding: 120px 0; display: flex; align-items: center; min-height: 100vh; }
+    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media (max-width: 860px) { .hero-content { grid-template-columns: 1fr; gap: 40px; } .hero { padding: 80px 0; min-height: auto; } }
+    .hero-left h1 { color: var(--white); margin-bottom: 32px; }
+    .hero-tagline { font-size: 28px; color: rgba(255, 255, 255, 0.8); font-weight: 400; max-width: 12ch; }
+    .hero-right { text-align: right; }
+    .arrow-line { width: 100%; height: 4px; background: var(--electric-orange); margin-bottom: 32px; position: relative; }
+    .arrow-line:after { content: ""; position: absolute; right: 0; top: -6px; width: 0; height: 0; border-left: 20px solid var(--electric-orange); border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+    .coming-soon { font-size: 48px; font-weight: 800; color: var(--electric-orange); margin-top: 20px; }
+    @media (max-width: 720px) { .hero h1 { font-size: 64px; } .hero-right { text-align: left; } .coming-soon { font-size: 32px; } }
 
-    /* Section */
-    section { padding: 100px 0; }
-    .sec-head { margin-bottom: 60px; }
-    .sec-tag { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--electric-orange); margin-bottom: 16px; }
+    /* Banner CTA */
+    .banner { background: var(--electric-orange); color: var(--white); padding: 20px 0; text-align: center; }
+    .banner-text { font-size: 14px; font-weight: 600; margin: 0; }
+    .banner a { color: var(--white); text-decoration: underline; font-weight: 700; }
+    .banner a:hover { text-decoration: none; }
 
-    /* What We Do */
-    .services { background: var(--white); }
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-    @media (max-width: 860px) { .services-grid { grid-template-columns: 1fr; } }
-    .service-card { padding: 32px; background: var(--bg-light); border-left: 4px solid var(--electric-orange); transition: all 0.2s; }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08); }
-    .service-card h4 { color: var(--slate-blue-gray); }
-    .service-card p { color: var(--text-muted); font-size: 15px; margin: 0; }
+    /* Narrative Block */
+    .narrative { background: var(--white); padding: 100px 0; }
+    .narrative-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    @media (max-width: 860px) { .narrative-grid { grid-template-columns: 1fr; gap: 60px; } }
+    
+    .narrative-text { }
+    .narrative-text p { font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; }
+    .narrative-text p:first-child { font-size: 18px; font-weight: 600; color: var(--text-dark); line-height: 1.6; }
+    
+    .narrative-visual { display: flex; flex-direction: column; gap: 32px; }
+    .visual-block { padding: 40px; background: var(--bg-light); border-left: 6px solid var(--electric-orange); border-radius: 2px; }
+    .visual-block h4 { font-size: 18px; font-weight: 700; color: var(--slate-blue-gray); margin-bottom: 12px; }
+    .visual-block p { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
 
-    /* Who It's For */
-    .personas { background: var(--sky-blue); color: var(--text-dark); }
-    .personas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 60px; }
-    @media (max-width: 860px) { .personas-grid { grid-template-columns: 1fr; } }
-    .persona { background: rgba(255, 255, 255, 0.9); padding: 32px; border-radius: 4px; }
-    .persona h5 { color: var(--slate-blue-gray); margin-bottom: 12px; }
-    .persona p { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
-
-    /* Early Access */
-    .early-access { background: var(--white); }
-    .signup-form { max-width: 480px; margin-top: 40px; }
-    .form-group { display: flex; flex-direction: column; margin-bottom: 12px; }
-    label { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text-dark); }
-    input { padding: 12px 16px; border: 1px solid var(--calm-gray); border-radius: 4px; font-family: inherit; font-size: 14px; }
-    input:focus { outline: none; border-color: var(--electric-orange); box-shadow: 0 0 0 3px rgba(255, 109, 0, 0.1); }
-    .form-submit { background: var(--electric-orange); color: var(--white); border: none; cursor: pointer; font-weight: 600; width: 100%; margin-top: 8px; }
+    /* CTA Section */
+    .cta-section { background: var(--slate-blue-gray); color: var(--white); padding: 80px 0; text-align: center; }
+    .cta-section h2 { color: var(--white); margin-bottom: 20px; }
+    .cta-section p { color: rgba(255, 255, 255, 0.9); font-size: 16px; margin-bottom: 40px; max-width: 50ch; margin-left: auto; margin-right: auto; }
+    .signup-form { max-width: 480px; margin: 0 auto; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 14px; }
+    label { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--white); }
+    input { padding: 12px 16px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.1); color: var(--white); border-radius: 4px; font-family: inherit; font-size: 14px; }
+    input::placeholder { color: rgba(255, 255, 255, 0.6); }
+    input:focus { outline: none; border-color: var(--electric-orange); background: rgba(255, 255, 255, 0.15); }
+    .form-submit { background: var(--electric-orange); color: var(--white); border: none; cursor: pointer; font-weight: 600; width: 100%; margin-top: 6px; padding: 12px; border-radius: 4px; font-size: 14px; transition: background 0.2s; }
     .form-submit:hover { background: #E55A00; }
 
     /* Footer */
-    footer { background: var(--slate-blue-gray); color: var(--white); padding: 60px 0; text-align: center; }
+    footer { background: var(--black); color: var(--white); padding: 60px 0; text-align: center; }
     footer p { font-size: 14px; margin-bottom: 8px; }
-    .footer-meta { font-size: 12px; color: rgba(255, 255, 255, 0.7); margin-top: 24px; }
-
-    /* Accent line (like logo design) */
-    .accent-line { height: 4px; background: var(--electric-orange); margin-top: 32px; }
+    footer a { color: var(--electric-orange); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-meta { font-size: 12px; color: rgba(255, 255, 255, 0.6); margin-top: 24px; }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap header-row">
-    <a class="logo" href="#top">The LEAD<span class="logo-accent">.</span></a>
-    <nav>
-      <a href="#what-we-do">What We Do</a>
-      <a href="#who">Who It's For</a>
-      <a href="#early-access">Early Access</a>
-    </nav>
-  </div>
-</header>
-
 <section class="hero" id="top">
   <div class="wrap">
-    <h1>We clear the line with strategy and fundamentals.</h1>
-    <p class="lede">Your fullback. Studies the game. Protects the revenue. Clears the holes. Gets the occasional ball. Stands next to your team. Leaves you stronger.</p>
-    <div class="cta-group">
-      <a href="#early-access" class="btn btn-primary">Get Early Access →</a>
-      <a href="mailto:hello@workwiththelead.com" class="btn btn-secondary">Email Us</a>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="what-we-do">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-tag">Five Core Offerings</div>
-      <h2>We Study Your Game, Then Execute</h2>
-      <p class="lede">Strategy without systems is theater. Systems without strategy is noise. Both, executed together.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <h4>Marketing Function Build</h4>
-        <p>Hired as first marketing leader or brought in to rebuild. We study the game, build your playbook, hire your team, implement systems. Then step back.</p>
+    <div class="hero-content">
+      <div class="hero-left">
+        <h1>The LEAD<span style="color: var(--electric-orange);">.</span></h1>
+        <p class="hero-tagline">growth marketing</p>
       </div>
-      <div class="service-card">
-        <h4>Revenue Protection</h4>
-        <p>Revenue under attack. Processes broken. Data's a mess. Handoffs chaos. We pick up the pressure and seal the gaps where it matters.</p>
-      </div>
-      <div class="service-card">
-        <h4>Critical Play Execution</h4>
-        <p>In the trenches running the plays that move deals. Rebrand. Product launch. Major campaign. We carry the ball.</p>
-      </div>
-      <div class="service-card">
-        <h4>Demand Generation &amp; Pipeline</h4>
-        <p>Know what the market wants to hear. Position your story clean. Build systems (campaigns, nurture, automation) that turn strategy into qualified pipeline.</p>
-      </div>
-      <div class="service-card">
-        <h4>Team Leadership &amp; Coaching</h4>
-        <p>Stand next to your team. Build them up. Teach them the schemes. Leave them ready to execute without us.</p>
+      <div class="hero-right">
+        <div class="arrow-line"></div>
+        <div class="coming-soon">coming soon</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="personas" id="who">
+<section class="banner">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-tag">Built For</div>
-      <h2>The Players Who Get It</h2>
-      <p class="lede" style="color: var(--text-muted);">If you're hiring for strategic and tactical balance, protecting pipeline, or scaling a function, this is for you.</p>
-    </div>
-    <div class="personas-grid">
-      <div class="persona">
-        <h5>CMO / VP Marketing</h5>
-        <p>Needs someone who owns full stack—strategy, creative, systems, team. Values hands-on execution. Looking to build or rebuild a function.</p>
+    <p class="banner-text"><a href="#early-access">Get early access →</a></p>
+  </div>
+</section>
+
+<section class="narrative" id="narrative">
+  <div class="wrap">
+    <div class="narrative-grid">
+      <div class="narrative-text">
+        <p>25 years in B2B marketing. Agency side. In-house side. Sometimes both in the same week.</p>
+        <p>I've run client accounts. I've run executive teams. I know what actually gets a campaign live versus what just gets talked about in a meeting.</p>
+        <p>Here's what that looks like in practice. You spot a shift in your market, maybe from an earnings call or something an exec said on stage. By Friday I've got messaging built, a LinkedIn ad running to that audience, warm and cold email sequences out, and a landing page built for that exact buyer. What used to take weeks takes days.</p>
+        <p>Google Ads. SEO. Content. Systems. All table stakes now, and I can run any of it. The harder skill is judgment: knowing which tool actually gets adopted and which one burns budget and six weeks of goodwill. I'll bolt together something cheaper that works over something shiny that sits unused, every time.</p>
+        <p>I also bring people. Freelancers, agencies, dev, design, ABM, whoever the project needs. And relationships with the media, analysts, and communities that actually move your market. Built over 25 years, not rented for a campaign.</p>
+        <p>Call it fullback instincts if you want. I'd just call it getting to work.</p>
       </div>
-      <div class="persona">
-        <h5>VP Sales / Chief Revenue Officer</h5>
-        <p>Revenue focused. Pipeline obsessed. Sales and marketing alignment critical. Needs someone who understands both sides and removes friction.</p>
-      </div>
-      <div class="persona">
-        <h5>CEO / Executive Team</h5>
-        <p>Company growth hitting an inflection point. Marketing is the bottleneck to scaling. Needs discipline and operational excellence.</p>
+      <div class="narrative-visual">
+        <div class="visual-block">
+          <h4>Direction</h4>
+          <p>Clear positioning. Messaging architecture. Go-to-market strategy that lives on the page and in the field.</p>
+        </div>
+        <div class="visual-block">
+          <h4>Execution</h4>
+          <p>Running the play. Campaigns live, adjustments in real time. In the trenches, not observing from the booth.</p>
+        </div>
+        <div class="visual-block">
+          <h4>Results</h4>
+          <p>Pipeline moves. Revenue grows. Your team gets stronger. We step back. You own it.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="early-access" id="early-access">
+<section class="cta-section" id="early-access">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-tag">Coming Soon</div>
-      <h2>Get Early Access</h2>
-      <p class="lede">Full site launch in September. Join the early list for first access to services, case studies, and a private community of CMOs and revenue leaders.</p>
-    </div>
+    <h2>Get Early Access</h2>
+    <p>Full site coming soon. Let's talk about deploying me tomorrow.</p>
     <form class="signup-form" name="early-access" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="early-access" />
       <div class="form-group">
@@ -222,7 +178,7 @@
         <label for="role">Your Role</label>
         <input type="text" id="role" name="role" placeholder="CMO, VP Marketing, VP Sales, etc.">
       </div>
-      <button type="submit" class="btn form-submit">Get Early Access</button>
+      <button type="submit" class="form-submit">Get Early Access</button>
     </form>
   </div>
 </section>
@@ -230,8 +186,8 @@
 <footer>
   <div class="wrap">
     <p><strong>The LEAD</strong></p>
-    <p>Your fullback. Strategy and execution.</p>
-    <p><a href="mailto:hello@workwiththelead.com" style="color: var(--electric-orange); text-decoration: none;">hello@workwiththelead.com</a></p>
+    <p>Direction. Plus execution.</p>
+    <p><a href="mailto:hello@workwiththelead.com">hello@workwiththelead.com</a></p>
     <div class="footer-meta">
       <p>© 2026 The LEAD. Coming soon.</p>
     </div>
