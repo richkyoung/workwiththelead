@@ -57,17 +57,17 @@
     .highlight { color: var(--electric-orange); font-weight: 600; }
 
     /* Hero */
-    .hero { background: var(--slate-blue-gray); color: var(--white); padding: 80px 0; display: flex; align-items: center; min-height: 60vh; }
+    .hero { background: var(--slate-blue-gray); color: var(--white); padding: 60px 0 40px; display: flex; align-items: center; min-height: auto; }
     .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    @media (max-width: 860px) { .hero-content { grid-template-columns: 1fr; gap: 40px; } .hero { padding: 60px 0; min-height: auto; } }
-    .hero-left h1 { color: var(--white); margin-bottom: 28px; font-weight: 800; }
+    @media (max-width: 860px) { .hero-content { grid-template-columns: 1fr; gap: 40px; } .hero { padding: 40px 0 30px; } }
+    .hero-left h1 { color: var(--white); margin-bottom: 0; font-weight: 800; }
     .hero-left h1 span { font-weight: 400; }
-    .hero-tagline { font-size: 20px; color: rgba(255, 255, 255, 0.9); font-weight: 500; max-width: 12ch; letter-spacing: 0.02em; }
-    .hero-right { text-align: right; }
-    .arrow-line { width: 100%; height: 3px; background: var(--electric-orange); margin-bottom: 24px; position: relative; }
+    .hero-tagline { font-size: 20px; color: rgba(255, 255, 255, 0.9); font-weight: 500; max-width: 12ch; letter-spacing: 0.02em; display: none; }
+    .hero-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
+    .arrow-line { width: 100%; height: 3px; background: var(--electric-orange); position: relative; order: 2; }
     .arrow-line:after { content: ""; position: absolute; right: -8px; top: -5px; width: 0; height: 0; border-left: 16px solid var(--electric-orange); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
-    .coming-soon { font-size: 42px; font-weight: 800; color: var(--electric-orange); margin-top: 16px; letter-spacing: -0.01em; }
-    @media (max-width: 720px) { .hero h1 { font-size: 48px; } .hero-tagline { font-size: 16px; } .hero-right { text-align: left; } .coming-soon { font-size: 28px; } }
+    .coming-soon { font-size: 42px; font-weight: 800; color: var(--electric-orange); letter-spacing: -0.01em; order: 3; }
+    @media (max-width: 720px) { .hero h1 { font-size: 48px; } .hero-right { text-align: left; } .coming-soon { font-size: 28px; } }
 
     /* Banner */
     .banner { background: var(--electric-orange); height: 8px; }
@@ -78,16 +78,15 @@
     @media (max-width: 860px) { .narrative-grid { grid-template-columns: 1fr; gap: 60px; } }
     .narrative-text { max-width: 600px; }
     .narrative-text p { font-size: 17px; line-height: 1.8; color: var(--text-muted); margin-bottom: 28px; font-weight: 400; }
-    .narrative-text p:first-child { font-size: 20px; font-weight: 600; color: var(--text-dark); line-height: 1.6; }
-    .narrative-signoff { font-size: 16px; font-weight: 500; color: var(--text-dark); margin-top: 40px; line-height: 1.6; }
+    .narrative-text p:first-child { font-size: 17px; font-weight: 400; color: var(--text-muted); line-height: 1.8; }
+    .narrative-signoff { font-size: 16px; font-weight: 400; color: var(--text-dark); margin-top: 40px; line-height: 1.6; }
 
     /* Advantage Block */
-    .advantage-block { background: #eeebe5; padding: 60px 40px; }
-    .advantage-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--electric-orange); margin-bottom: 32px; }
+    .advantage-block { background: #eeebe5; padding: 40px; border-radius: 12px; }
     .advantage-text { font-size: 68px; font-weight: 800; line-height: 1.1; color: var(--text-dark); }
     .advantage-text .orange { color: var(--electric-orange); }
 
-    @media (max-width: 720px) { .narrative { padding: 80px 0; } .advantage-block { padding: 40px 24px; } .advantage-text { font-size: 48px; } }
+    @media (max-width: 720px) { .narrative { padding: 80px 0; } .advantage-block { padding: 32px 24px; border-radius: 8px; } .advantage-text { font-size: 48px; } }
 
     /* Booking Section */
     .booking-section {
@@ -164,8 +163,8 @@
         <h1><span>The</span> LEAD<span style="color: var(--electric-orange);">.</span></h1>
       </div>
       <div class="hero-right">
-        <div class="arrow-line"></div>
         <div class="coming-soon">coming soon</div>
+        <div class="arrow-line"></div>
       </div>
     </div>
   </div>
@@ -188,7 +187,6 @@
         </div>
       </div>
       <div class="advantage-block">
-        <div class="advantage-tag">THE ADVANTAGE</div>
         <div class="advantage-text">
           25 years in B2B marketing. Agency side. In-house side. I see the <span class="orange">entire field.</span>
         </div>
@@ -203,6 +201,7 @@
   <div class="wrap">
     <div class="booking-intro">
       <h2>Let's talk about deploying me tomorrow.</h2>
+      <p>Pick a time that works.</p>
       <button class="booking-button" id="bookingToggle">
         Find a time →
       </button>
@@ -235,10 +234,12 @@
 
 <footer>
   <div class="wrap">
-    <p><a href="mailto:rich@workwiththelead.com">rich@workwiththelead.com</a></p>
+    <p><strong>The LEAD</strong></p>
+    <p>Direction. Plus execution.</p>
+    <p><a href="mailto:hello@workwiththelead.com">hello@workwiththelead.com</a></p>
     <p><a href="https://www.linkedin.com/in/richkyoung/" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
     <div class="footer-meta">
-      <p>© 2026 The LEAD.</p>
+      <p>© 2026 The LEAD. Coming soon.</p>
     </div>
   </div>
 </footer>
