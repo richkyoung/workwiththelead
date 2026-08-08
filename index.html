@@ -56,18 +56,18 @@
     p { font-size: 16px; line-height: 1.6; margin-bottom: 16px; font-weight: 400; }
     .highlight { color: var(--electric-orange); font-weight: 600; }
 
-    /* Hero */
-    .hero { background: var(--slate-blue-gray); color: var(--white); padding: 60px 0 40px; display: flex; align-items: center; min-height: auto; }
-    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    @media (max-width: 860px) { .hero-content { grid-template-columns: 1fr; gap: 40px; } .hero { padding: 40px 0 30px; } }
-    .hero-left h1 { color: var(--white); margin-bottom: 0; font-weight: 800; }
-    .hero-left h1 span { font-weight: 400; }
-    .hero-tagline { font-size: 20px; color: rgba(255, 255, 255, 0.9); font-weight: 500; max-width: 12ch; letter-spacing: 0.02em; display: none; }
-    .hero-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
-    .arrow-line { width: 100%; height: 3px; background: var(--electric-orange); position: relative; order: 2; }
-    .arrow-line:after { content: ""; position: absolute; right: -8px; top: -5px; width: 0; height: 0; border-left: 16px solid var(--electric-orange); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
-    .coming-soon { font-size: 42px; font-weight: 800; color: var(--electric-orange); letter-spacing: -0.01em; order: 3; }
-    @media (max-width: 720px) { .hero h1 { font-size: 48px; } .hero-right { text-align: left; } .coming-soon { font-size: 28px; } }
+/* Hero */
+.hero { background: var(--slate-blue-gray); color: var(--white); padding: 80px 0 60px; display: flex; align-items: center; min-height: auto; }
+.hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+@media (max-width: 860px) { .hero-content { grid-template-columns: 1fr; gap: 40px; } .hero { padding: 60px 0 50px; } }
+.hero-left { display: flex; flex-direction: column; gap: 24px; }
+.hero-left h1 { color: var(--white); margin: 0; font-weight: 800; }
+.hero-left h1 span { font-weight: 400; }
+.arrow-line { width: 280px; height: 3px; background: var(--electric-orange); position: relative; }
+.arrow-line:after { content: ""; position: absolute; right: -8px; top: -5px; width: 0; height: 0; border-left: 16px solid var(--electric-orange); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+.hero-right { text-align: right; }
+.coming-soon { font-size: 42px; font-weight: 800; color: var(--electric-orange); letter-spacing: -0.01em; }
+@media (max-width: 720px) { .hero h1 { font-size: 48px; } .coming-soon { font-size: 28px; } .arrow-line { width: 200px; } }
 
     /* Banner */
     .banner { background: var(--electric-orange); height: 8px; }
@@ -161,10 +161,10 @@
     <div class="hero-content">
       <div class="hero-left">
         <h1><span>The</span> LEAD<span style="color: var(--electric-orange);">.</span></h1>
+        <div class="arrow-line"></div>
       </div>
       <div class="hero-right">
         <div class="coming-soon">coming soon</div>
-        <div class="arrow-line"></div>
       </div>
     </div>
   </div>
